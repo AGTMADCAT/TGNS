@@ -7,7 +7,7 @@ Contact [OrigamiPaper](https://github.com/OrigamiPaper) if you find any missing 
 
 Modules, in the true lua sense, are not used very much. Thus, tools like [depgraph](https://github.com/mpeterv/depgraph) is don't give a good picture of the codebase. That is simply the way either ns2 or shine is designed it seems.
 
-Important note: The plugin name is what [Wyzcrak](https://github.com/lancehilliard) calls the module in his code but they do not always correspond to a lua script. This is evident on the graph I hacked together from that is based on the table.
+Important note: The plugin name is what [Wyzcrak](https://github.com/lancehilliard) calls the extension/plugin in his code but they do not always correspond to a lua script. This is evident on the graph I hacked together from that is based on the table.
 
 |Filename|Plugin|
 |---------------------------------------------------|-------------------------|
@@ -168,5 +168,5 @@ Note these dependencies are generate from parsing the file looking for "Shine.Pl
 ```{bash}
 cd docs
 find ../* | grep "\.lua" > all_lua.txt
-cat all_lua.txt | xargs grep -oP "Shine.Plugins\.([^\s.:[]+)" | sort -u > PluginsAssociationRaw.txt
+cat all_lua.txt | xargs grep -oP "Shine.Plugins\.[^\s.:[]+" | sort -u > PluginsAssociationRaw.txt
 ```
