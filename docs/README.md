@@ -9,7 +9,7 @@ Modules, in the true lua sense, are not used very much. Thus, tools like [depgra
 
 The plugin name is what (Wyzcrak)[https://github.com/lancehilliard] calls the module in his code but they do not always correspond to a lua script. This is evident on the graph I hacked together from that is based on the table.
 
-|Filename-------------------------------------------|Plugin-------------------|
+|Filename|Plugin|
 |---------------------------------------------------|-------------------------|
 | shine/extensions/afkkickhelper.lua                | afkkick                 |
 | shine/extensions/afkkickhelper.lua                | arclight                |
@@ -157,12 +157,15 @@ The plugin name is what (Wyzcrak)[https://github.com/lancehilliard] calls the mo
 | tgns/server/TGNSCommonServer.lua                  | tempgroups              |
 | tgns/server/TGNSConnectedTimesTracker.lua         | bots                    |
 
+### Plugin Dependency Graph:
 <img src="./PluginsAssociationProcessed.svg">
 
-###How files were (crudely) generated:
+A plugin dependency graph based on the lua file names and referenced Shine.Plugin objects
+
+### How files were (crudely) generated:
 Note these dependencies are generate from parsing the file looking for "Shine.Plugins" string in each file and will produce false positives when commentted code is found. Linux command line below:
 
-```
+```{bash}
 cd docs
 find ../* | grep "\.lua" > all_lua.txt
 cat all_lua.txt | xargs grep -oP "Shine.Plugins\.([^\s.:[]+)" | sort -u > PluginsAssociationRaw.txt
