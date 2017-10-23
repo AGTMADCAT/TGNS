@@ -41,8 +41,8 @@ TGNSNs2StatsProxy.GetPlayerRecord = function(steamId)
 	local result = {}
 	local decodedResponseForPlayer = decodedResponses[steamId]
 	result.HasData = decodedResponseForPlayer ~= nil
-	result.HasData = result.HasData and TGNS.IsNumberWithNonZeroPositiveValue(decodedResponseForPlayer.score) // discard found records lacking score
-	result.HasData = result.HasData and TGNS.IsNumberWithNonZeroPositiveValue(decodedResponseForPlayer.time_played) // discard found records lacking playtime
+	result.HasData = result.HasData and TGNS.IsNumberWithNonZeroPositiveValue(decodedResponseForPlayer.score) --// discard found records lacking score
+	result.HasData = result.HasData and TGNS.IsNumberWithNonZeroPositiveValue(decodedResponseForPlayer.time_played) --// discard found records lacking playtime
 	if result.HasData then
 		result.GetCumulativeScore = function()
 			return decodedResponseForPlayer.score
