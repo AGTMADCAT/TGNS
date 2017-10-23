@@ -160,7 +160,7 @@ Important note: The plugin name is what [Wyzcrak](https://github.com/lancehillia
 ### Plugin Dependency Graph:
 <img src="./PluginsAssociationProcessed.svg">
 
-A plugin dependency graph based on the lua file names and referenced Shine.Plugin objects. Note that some file names are repeated like server or client which cause multiple connections.
+A plugin dependency graph based on the lua file names and referenced Shine.Plugin objects. Note that some file names are repeated like server or client which collapse together into one node (you can also see multiple connections between) nodes.
 
 ### How files were (crudely) generated:
 Note these dependencies are generate from parsing the file looking for "Shine.Plugins" string in each file and will produce false positives when commentted code is found. Linux command line below:
