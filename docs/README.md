@@ -9,7 +9,8 @@ Modules, in the true lua sense, are not used very much. Thus, tools like [depgra
 
 Important note: The plugin name is what [Wyzcrak](https://github.com/lancehilliard) calls the extension/plugin in his code but they do not always correspond to a lua script. This is evident on the graph I hacked together from that is based on the table.
 
-|Filename|Plugin|
+Where Plugins are used/called:
+| Filename                                          | Plugin                  |
 |---------------------------------------------------|-------------------------|
 | shine/extensions/afkkickhelper.lua                | afkkick                 |
 | shine/extensions/afkkickhelper.lua                | arclight                |
@@ -157,16 +158,110 @@ Important note: The plugin name is what [Wyzcrak](https://github.com/lancehillia
 | tgns/server/TGNSCommonServer.lua                  | tempgroups              |
 | tgns/server/TGNSConnectedTimesTracker.lua         | bots                    |
 
+List of filenames where plugin is registered:
+| Filename (shine/extensions)      | plugin                  |
+|----------------------------------|-------------------------|
+| adminmenu/shared.lua             | adminmenu               |
+| afkchanged.lua                   | afkchanged              |
+| afkkickhelper.lua                | afkkickhelper           |
+| arclight/arclight.lua            | arclight                |
+| audit.lua                        | audit                   |
+| autoexec/shared.lua              | autoexec                |
+| autospec/shared.lua              | autospec                |
+| balance/balance.lua              | balance                 |
+| betterknownas.lua                | betterknownas           |
+| bots.lua                         | bots                    |
+| broadcast.lua                    | broadcast               |
+| captains/captains.lua            | captains                |
+| chatchannels.lua                 | chatchannels            |
+| communityslots.lua               | communityslots          |
+| crashreconnect/shared.lua        | crashreconnect          |
+| damagemodifier.lua               | damagemodifier          |
+| disablestockmapvote.lua          | disablestockmapvote     |
+| emptymapcycler.lua               | emptymapcycler          |
+| enforceteamsizes.lua             | enforceteamsizes        |
+| everysecond/shared.lua           | everysecond             |
+| forceroundstart.lua              | forceroundstart         |
+| friendlyfiretweaks.lua           | friendlyfiretweaks      |
+| fullgameplayed.lua               | fullgameplayed          |
+| gamestartevents.lua              | gamestartevents         |
+| gamestracker.lua                 | gamestracker            |
+| gorgetunnelhelper/shared.lua     | gorgetunnelhelper       |
+| greetings.lua                    | greetings               |
+| groundedrookies.lua              | groundedrookies         |
+| help.lua                         | help                    |
+| hidefullmodlist.lua              | hidefullmodlist         |
+| hidespectators.lua               | hidespectators          |
+| improvedafkhandler.lua           | improvedafkhandler      |
+| infestedhelper/shared.lua        | infestedhelper          |
+| karma.lua                        | karma                   |
+| lapstracker.lua                  | lapstracker             |
+| lookdown.lua                     | lookdown                |
+| mapvotehelper.lua                | mapvotehelper           |
+| modupdatednotice.lua             | modupdatednotice        |
+| movement/movement.lua            | movement                |
+| newcomms/shared.lua              | newcomms                |
+| noattackpregame.lua              | noattackpregame         |
+| notifyadminonmuteplayer.lua      | notifyadminonmuteplayer |
+| perficon/shared.lua              | perficon                |
+| permissions.lua                  | permissions             |
+| playerlocationchanged.lua        | playerlocationchanged   |
+| pregamescoreboardsort/shared.lua | pregamescoreboardsort   |
+| primeablechat/primeablechat.lua  | primeablechat           |
+| printablenames.lua               | printablenames          |
+| prohibitednames.lua              | prohibitednames         |
+| push.lua                         | push                    |
+| recordinghelper/shared.lua       | recordinghelper         |
+| reluse.lua                       | reluse                  |
+| restartwhenempty/shared.lua      | restartwhenempty        |
+| rookiethrottle.lua               | rookiethrottle          |
+| rotatingeggspawns/shared.lua     | rotatingeggspawns       |
+| scoreboardicons.lua              | scoreboardicons         |
+| scoreboard/shared.lua            | scoreboard              |
+| serverstart/shared.lua           | serverstart             |
+| sidebar.lua                      | sidebar                 |
+| siegehelper.lua                  | siegehelper             |
+| spawnselectionoverrides.lua      | spawnselectionoverrides |
+| specbets.lua                     | specbets                |
+| speclimit.lua                    | speclimit               |
+| speclisten.lua                   | speclisten              |
+| sprayhelper/shared.lua           | sprayhelper             |
+| squadnumbers/shared.lua          | squadnumbers            |
+| stagedteamjoins.lua              | stagedteamjoins         |
+| statusextended.lua               | statusextended          |
+| taglines.lua                     | taglines                |
+| targetedcommands.lua             | targetedcommands        |
+| td/td.lua                        | td                      |
+| teamres.lua                      | teamres                 |
+| teamroles.lua                    | teamroles               |
+| teamswitch.lua                   | teamswitch              |
+| teamticker.lua                   | teamticker              |
+| tempgroups.lua                   | tempgroups              |
+| tgnsbadges/shared.lua            | tgnsbadges              |
+| timedstart.lua                   | timedstart              |
+| updatetoreadyroomhelper.lua      | updatetoreadyroomhelper |
+| uweranking.lua                   | uweranking              |
+| voicecommreminder.lua            | voicecommreminder       |
+| winorlose.lua                    | winorlose               |
+| wraplength/shared.lua            | wraplength              |
+
+Missing plugins from this list are likely built into shine already or in ns2 itself.
+
 ### Plugin Dependency Graph:
-<img src="./PluginsAssociationProcessed.svg">
+<img src="./PluginsAssociationProcessedv2.svg">
 
-A plugin dependency graph based on the lua file names and referenced Shine.Plugin objects. Note that some file names are repeated like server or client which collapse together into one node (you can also see multiple connections between nodes).
+A plugin dependency graph based on the lua file names and referenced Shine.Plugin objects. The lua file connected is to the place where the plugin is registered (i.e. initally defined). If the plugin has no file where it was registered it will not have a lua file assocated. These cases are probably built in to NS2 or Shine in some way. Plugins that are not referenced anywhere but their own lua file are not included in this graph. This graph does not include lua files that load other lua scripts (see lua/tgns folder for examples).
 
-### How files were (crudely) generated:
-Note these dependencies are generate from parsing the file looking for "Shine.Plugins" string in each file and will produce false positives when commentted code is found. Linux command line below:
-
+### How files were generated:
+Here are some bash commands I ran to generate the raw files used to generate tables and graphs. It is somewhat incomplete but I hope that it will answer questions to explain what I parsed for in the files.
 ```{bash}
 cd docs
 find ../* | grep "\.lua" > all_lua.txt
 cat all_lua.txt | xargs grep -oP "Shine.Plugins\.[^\s.:[]+" | sort -u > PluginsAssociationRaw.txt
+cat all_lua.txt | xargs grep -oP "Shine.RegisterExtension\([^\n]+\)" | sort -u | sed -rn 's/\.\.\/mods\/tgns\/output\/lua\/shine\/extensions\/([^:]+):Shine:RegisterExtension\(\s*"([^"]+)"\s*,\s*Plugin\s*\)/\1\t\2/p' > ShinePluginRegistration.tsv
+grep -v -Ff ShinePluginRegistration.tsv PluginsAssociationProcessed.txt > PluginsAssociationProcessed_noSelfConnect.tsv
+awk '{print$1}' ShinePluginRegistration.tsv > ShinePluginRegistration_filenamesOnly.txt
+grep -vFf ShinePluginRegistration_filenamesOnly.txt PluginsAssociationProcessed.txt | awk '{print $1}' | sort -u > PluginsAssociationFilesNoRegistration.txt
 ```
+
+The rest is some ad hoc regex with a text editor, graphviz and gvpr to generate a dot file.

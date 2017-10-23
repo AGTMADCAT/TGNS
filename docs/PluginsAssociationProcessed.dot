@@ -1,10 +1,116 @@
 digraph pluginGraph {
+adminmenu [label="adminmenu/shared.lua"];
+afkchanged [label="afkchanged.lua"];
+afkkickhelper [label="afkkickhelper.lua"];
+arclight [label="arclight/arclight.lua"];
+audit [label="audit.lua"];
+autoexec [label="autoexec/shared.lua"];
+autospec [label="autospec/shared.lua"];
+balance [label="balance/balance.lua"];
+betterknownas [label="betterknownas.lua"];
+bots [label="bots.lua"];
+broadcast [label="broadcast.lua"];
+captains [label="captains/captains.lua"];
+chatchannels [label="chatchannels.lua"];
+communityslots [label="communityslots.lua"];
+crashreconnect [label="crashreconnect/shared.lua"];
+damagemodifier [label="damagemodifier.lua"];
+disablestockmapvote [label="disablestockmapvote.lua"];
+emptymapcycler [label="emptymapcycler.lua"];
+enforceteamsizes [label="enforceteamsizes.lua"];
+everysecond [label="everysecond/shared.lua"];
+forceroundstart [label="forceroundstart.lua"];
+friendlyfiretweaks [label="friendlyfiretweaks.lua"];
+fullgameplayed [label="fullgameplayed.lua"];
+gamestartevents [label="gamestartevents.lua"];
+gamestracker [label="gamestracker.lua"];
+gorgetunnelhelper [label="gorgetunnelhelper/shared.lua"];
+greetings [label="greetings.lua"];
+groundedrookies [label="groundedrookies.lua"];
+help [label="help.lua"];
+hidefullmodlist [label="hidefullmodlist.lua"];
+hidespectators [label="hidespectators.lua"];
+improvedafkhandler [label="improvedafkhandler.lua"];
+infestedhelper [label="infestedhelper/shared.lua"];
+karma [label="karma.lua"];
+lapstracker [label="lapstracker.lua"];
+lookdown [label="lookdown.lua"];
+mapvotehelper [label="mapvotehelper.lua"];
+modupdatednotice [label="modupdatednotice.lua"];
+movement [label="movement/movement.lua"];
+newcomms [label="newcomms/shared.lua"];
+noattackpregame [label="noattackpregame.lua"];
+notifyadminonmuteplayer [label="notifyadminonmuteplayer.lua"];
+perficon [label="perficon/shared.lua"];
+permissions [label="permissions.lua"];
+playerlocationchanged [label="playerlocationchanged.lua"];
+pregamescoreboardsort [label="pregamescoreboardsort/shared.lua"];
+primeablechat [label="primeablechat/primeablechat.lua"];
+printablenames [label="printablenames.lua"];
+prohibitednames [label="prohibitednames.lua"];
+push [label="push.lua"];
+recordinghelper [label="recordinghelper/shared.lua"];
+reluse [label="reluse.lua"];
+restartwhenempty [label="restartwhenempty/shared.lua"];
+rookiethrottle [label="rookiethrottle.lua"];
+rotatingeggspawns [label="rotatingeggspawns/shared.lua"];
+scoreboardicons [label="scoreboardicons.lua"];
+scoreboard [label="scoreboard/shared.lua"];
+serverstart [label="serverstart/shared.lua"];
+sidebar [label="sidebar.lua"];
+siegehelper [label="siegehelper.lua"];
+spawnselectionoverrides [label="spawnselectionoverrides.lua"];
+specbets [label="specbets.lua"];
+speclimit [label="speclimit.lua"];
+speclisten [label="speclisten.lua"];
+sprayhelper [label="sprayhelper/shared.lua"];
+squadnumbers [label="squadnumbers/shared.lua"];
+stagedteamjoins [label="stagedteamjoins.lua"];
+statusextended [label="statusextended.lua"];
+taglines [label="taglines.lua"];
+targetedcommands [label="targetedcommands.lua"];
+td [label="td/td.lua"];
+teamres [label="teamres.lua"];
+teamroles [label="teamroles.lua"];
+teamswitch [label="teamswitch.lua"];
+teamticker [label="teamticker.lua"];
+tempgroups [label="tempgroups.lua"];
+tgnsbadges [label="tgnsbadges/shared.lua"];
+timedstart [label="timedstart.lua"];
+updatetoreadyroomhelper [label="updatetoreadyroomhelper.lua"];
+uweranking [label="uweranking.lua"];
+voicecommreminder [label="voicecommreminder.lua"];
+winorlose [label="winorlose.lua"];
+wraplength [label="wraplength/shared.lua"];
+autoexec_client [label="autoexec/client.lua"];
+autoexec_server [label="autoexec/server.lua"];
+crashreconnect_client [label="crashreconnect/client.lua"];
+gorgetunnelhelper_client [label="gorgetunnelhelper/client.lua"];
+infestedhelper_server [label="infestedhelper/server.lua"];
+newcomms_server [label="newcomms/server.lua"];
+pregamescoreboardsort_client [label="pregamescoreboardsort/client.lua"];
+recordinghelper_client [label="recordinghelper/client.lua"];
+recordinghelper_server [label="recordinghelper/server.lua"];
+restartwhenempty_server [label="restartwhenempty/server.lua"];
+scoreboard_client [label="scoreboard/client.lua"];
+scoreboard_server [label="scoreboard/server.lua"];
+serverstart_client [label="serverstart/client.lua"];
+serverstart_server [label="serverstart/server.lua"];
+sprayhelper_client [label="sprayhelper/client.lua"];
+sprayhelper_server [label="sprayhelper/server.lua"];
+squadnumbers_server [label="squadnumbers/server.lua"];
+tgnsbadges_server [label="tgnsbadges/server.lua"];
+wraplength_client [label="wraplength/client.lua"];
+wraplength_server [label="wraplength/server.lua"];
+tgns_server_TGNSClientKicker [label="tgns/server/TGNSClientKicker.lua"];
+tgns_server_TGNSCommonServer [label="tgns/server/TGNSClientKicker.lua"];
+tgns_server_TGNSConnectedTimesTracker [label="tgns/server/TGNSClientKicker.lua"];
+
 afkkickhelper -> afkkick
 afkkickhelper -> arclight
 afkkickhelper -> captains
 afkkickhelper -> scoreboard
 afkkickhelper -> timedstart
-arclight -> arclight
 arclight -> bots
 arclight -> captains
 arclight -> communityslots
@@ -13,10 +119,9 @@ arclight -> winorlose
 audit -> captains
 audit -> communityslots
 audit -> tf_comeback
-client -> autoexec
-server -> autoexec
+autoexec_client -> autoexec
+autoexec_server -> autoexec
 balance -> arclight
-balance -> balance
 balance -> captains
 balance -> communityslots
 balance -> mapvote
@@ -24,8 +129,6 @@ balance -> scoreboard
 balance -> sidebar
 balance -> updatetoreadyroomhelper
 balance -> voterandom
-betterknownas -> betterknownas
-bots -> bots
 bots -> captains
 bots -> forceroundstart
 bots -> mapvote
@@ -33,7 +136,6 @@ bots -> push
 bots -> sidebar
 bots -> winorlose
 captains -> afkkick
-captains -> captains
 captains -> mapvote
 captains -> push
 captains -> scoreboard
@@ -41,107 +143,95 @@ captains -> sidebar
 captains -> spawnselectionoverrides
 captains -> timedstart
 captains -> updatetoreadyroomhelper
-chatchannels -> chatchannels
 communityslots -> betterknownas
 communityslots -> bots
 communityslots -> captains
 communityslots -> chatchannels
-communityslots -> communityslots
 communityslots -> karma
 communityslots -> newcomms
 communityslots -> scoreboard
 communityslots -> sidebar
 communityslots -> teamres
-client -> serverstart
+crashreconnect_client -> serverstart
 damagemodifier -> lapstracker
 damagemodifier -> winorlose
 fullgameplayed -> communityslots
-client -> scoreboard
+gorgetunnelhelper_client -> scoreboard
 greetings -> betterknownas
 groundedrookies -> bots
 groundedrookies -> communityslots
 groundedrookies -> scoreboard
 hidefullmodlist -> push
-server -> mapvote
+infestedhelper_server -> mapvote
 karma -> bots
 karma -> captains
 karma -> communityslots
-karma -> karma
 karma -> push
-lapstracker -> lapstracker
 lapstracker -> scoreboard
 mapvotehelper -> arclight
 mapvotehelper -> captains
 mapvotehelper -> infestedhelper
 mapvotehelper -> mapvote
-server -> newcomms
-server -> scoreboard
-permissions -> permissions
-client -> pregamescoreboardsort
-printablenames -> printablenames
-client -> scoreboard
-server -> recordinghelper
-server -> mapvote
-client -> scoreboard
-client -> squadnumbers
-scoreboardicons -> scoreboardicons
-server -> afkkick
-server -> betterknownas
-server -> captains
-server -> newcomms
-server -> scoreboard
-server -> speclisten
-server -> squadnumbers
-server -> targetedcommands
-server -> voicecommreminder
-client -> crashreconnect
-client -> serverstart
-server -> mapvote
-server -> push
+newcomms_server -> newcomms
+newcomms_server -> scoreboard
+pregamescoreboardsort_client -> pregamescoreboardsort
+recordinghelper_client -> scoreboard
+recordinghelper_server -> recordinghelper
+restartwhenempty_server -> mapvote
+scoreboard_client -> scoreboard
+scoreboard_client -> squadnumbers
+scoreboard_server -> afkkick
+scoreboard_server -> betterknownas
+scoreboard_server -> captains
+scoreboard_server -> newcomms
+scoreboard_server -> scoreboard
+scoreboard_server -> speclisten
+scoreboard_server -> squadnumbers
+scoreboard_server -> targetedcommands
+scoreboard_server -> voicecommreminder
+serverstart_client -> crashreconnect
+serverstart_client -> serverstart
+serverstart_server -> mapvote
+serverstart_server -> push
 sidebar -> basecommands
 siegehelper -> communityslots
 siegehelper -> sidebar
 specbets -> mapvote
 speclisten -> sidebar
-speclisten -> speclisten
-client -> readyroomrave
-server -> readyroomrave
-server -> captains
-server -> scoreboard
+sprayhelper_client -> readyroomrave
+sprayhelper_server -> readyroomrave
+squadnumbers_server -> captains
+squadnumbers_server -> scoreboard
 stagedteamjoins -> captains
 stagedteamjoins -> mapvote
 taglines -> betterknownas
 targetedcommands -> scoreboard
-targetedcommands -> targetedcommands
-td -> td
 teamroles -> betterknownas
 teamroles -> scoreboard
 teamswitch -> captains
 teamswitch -> timedstart
-server -> mapvote
-server -> tgnsbadges
+tgnsbadges_server -> mapvote
+tgnsbadges_server -> tgnsbadges
 timedstart -> afkkickhelper
 timedstart -> arclight
 timedstart -> bots
 timedstart -> captains
 timedstart -> communityslots
 timedstart -> mapvote
-timedstart -> timedstart
 voicecommreminder -> scoreboard
 winorlose -> arclight
 winorlose -> communityslots
 winorlose -> scoreboard
-winorlose -> winorlose
-client -> wraplength
-server -> wraplength
-TGNSClientKicker -> ban
-TGNSCommonServer -> afkkick
-TGNSCommonServer -> ban
-TGNSCommonServer -> improvedafkhandler
-TGNSCommonServer -> karma
-TGNSCommonServer -> mapvote
-TGNSCommonServer -> permissions
-TGNSCommonServer -> scoreboard
-TGNSCommonServer -> tempgroups
-TGNSConnectedTimesTracker -> bots
+wraplength_client -> wraplength
+wraplength_server -> wraplength
+tgns_server_TGNSClientKicker -> ban
+tgns_server_TGNSCommonServer -> afkkick
+tgns_server_TGNSCommonServer -> ban
+tgns_server_TGNSCommonServer -> improvedafkhandler
+tgns_server_TGNSCommonServer -> karma
+tgns_server_TGNSCommonServer -> mapvote
+tgns_server_TGNSCommonServer -> permissions
+tgns_server_TGNSCommonServer -> scoreboard
+tgns_server_TGNSCommonServer -> tempgroups
+tgns_server_TGNSConnectedTimesTracker -> bots
 }
