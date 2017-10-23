@@ -1,4 +1,5 @@
 --[[AGT:
+Description:
 Runs WinOrLose, everyone's favourite surrender plugin.
 
 Dependencies:
@@ -8,7 +9,6 @@ Plugin Dependencies:
 Arclight (Soft)
 Scoreboard
 CommunitySlots
-
 ]]--
 local kWinOrLoseVoteArray = { }
 local kWinOrLoseTeamCount = 2
