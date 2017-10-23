@@ -8,29 +8,29 @@ local autoExecsCacheWasPreloaded = false
 
 local md = TGNSMessageDisplayer.Create("AUTOFPS")
 
-//local function ShowCurrentCommands(client)
-//	local steamId = TGNS.GetClientSteamId(client)
-//	local data = pdr:Load(steamId)
-//	md:ToClientConsole(client, "")
-//	md:ToClientConsole(client, "Your current commands:")
-//	TGNS.DoFor(data.commands, function(c)
-//		md:ToClientConsole(client, string.format("    %s", c))
-//	end)
-//	md:ToClientConsole(client, "")
-//	md:ToClientConsole(client, " * Re-specifying any existing command will remove it from the list.")
-//	md:ToClientConsole(client, "")
-//end
-//
-//local function ShowUsage(client)
-//	md:ToClientConsole(client, "")
-//	md:ToClientConsole(client, " Usage:")
-//	md:ToClientConsole(client, "     sv_autoexec <command>")
-//	md:ToClientConsole(client, " Notes:")
-//	md:ToClientConsole(client, " * Configured commands execute only when you connect as a Supporting Member")
-//	md:ToClientConsole(client, "")
-//	ShowCurrentCommands(client)
-//	md:ToClientConsole(client, "")
-//end
+--//local function ShowCurrentCommands(client)
+--//	local steamId = TGNS.GetClientSteamId(client)
+--//	local data = pdr:Load(steamId)
+--//	md:ToClientConsole(client, "")
+--//	md:ToClientConsole(client, "Your current commands:")
+--//	TGNS.DoFor(data.commands, function(c)
+--//		md:ToClientConsole(client, string.format("    %s", c))
+--//	end)
+--//	md:ToClientConsole(client, "")
+--//	md:ToClientConsole(client, " * Re-specifying any existing command will remove it from the list.")
+--//	md:ToClientConsole(client, "")
+--//end
+--//
+--//local function ShowUsage(client)
+--//	md:ToClientConsole(client, "")
+--//	md:ToClientConsole(client, " Usage:")
+--//	md:ToClientConsole(client, "     sv_autoexec <command>")
+--//	md:ToClientConsole(client, " Notes:")
+--//	md:ToClientConsole(client, " * Configured commands execute only when you connect as a Supporting Member")
+--//	md:ToClientConsole(client, "")
+--//	ShowCurrentCommands(client)
+--//	md:ToClientConsole(client, "")
+--//end
 
 function Plugin:ClientConnect(client)
 	local steamId = TGNS.GetClientSteamId(client)

@@ -37,7 +37,7 @@ local function ProcessChatCommand(sourceClient, channel, command, message)
 		else
 			md:ToPlayerNotifyError(sourcePlayer, "Admin usage: @<name> <message>, if name is blank only admins are messaged")
 		end
-	// Non-admins will send the message to all admins
+--	// Non-admins will send the message to all admins
 	else
 		local chatMessage = GetChatMessage(message)
 		if chatMessage then
