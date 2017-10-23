@@ -9,7 +9,8 @@ Modules, in the true lua sense, are not used very much. Thus, tools like [depgra
 
 Important note: The plugin name is what [Wyzcrak](https://github.com/lancehilliard) calls the extension/plugin in his code but they do not always correspond to a lua script. This is evident on the graph I hacked together from that is based on the table.
 
-Where Plugins are used/called:
+### Where Plugins are used/called:
+
 | Filename                                          | Plugin                  |
 |---------------------------------------------------|-------------------------|
 | shine/extensions/afkkickhelper.lua                | afkkick                 |
@@ -158,7 +159,8 @@ Where Plugins are used/called:
 | tgns/server/TGNSCommonServer.lua                  | tempgroups              |
 | tgns/server/TGNSConnectedTimesTracker.lua         | bots                    |
 
-List of filenames where plugin is registered:
+### List of filenames where plugin is registered:
+
 | Filename (shine/extensions)      | plugin                  |
 |----------------------------------|-------------------------|
 | adminmenu/shared.lua             | adminmenu               |
