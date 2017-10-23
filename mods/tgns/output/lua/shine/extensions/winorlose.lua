@@ -1,3 +1,15 @@
+--[[AGT:
+Runs WinOrLose, everyone's favourite surrender plugin.
+
+Dependencies:
+A lot of TGNS methods, not sure where they live
+
+Plugin Dependencies:
+Arclight (Soft)
+Scoreboard
+CommunitySlots
+
+]]--
 local kWinOrLoseVoteArray = { }
 local kWinOrLoseTeamCount = 2
 local kTimeAtWhichWinOrLoseVoteSucceeded = 0
