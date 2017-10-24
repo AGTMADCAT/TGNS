@@ -56,23 +56,23 @@ local function TellAdminsAboutPlayerMutes()
 	end
 end
 
-//local function ListMutes(client)
-//	// build look up table for player names by clientindex
-//	playerNames = {}
-//
-//	ServerAdminPrint(client, "Player Mutes:")
-//	for _, player in pairs(TGNS.GetPlayerList()) do
-//		playerNames[player:GetClientIndex()] = player:GetName()
-//	end
-//	for _, player in pairs(TGNS.GetPlayerList()) do
-//		for clientIndex, name in pairs(playerNames) do
-//			if player:GetClientMuted(clientIndex) then
-//				ServerAdminPrint(client, player:GetName() .. " : " .. name)
-//			end
-//		end
-//	end
-//end
-//TGNS.RegisterCommandHook("Console_sv_mutes", ListMutes, help)
+--//local function ListMutes(client)
+--//	// build look up table for player names by clientindex
+--//	playerNames = {}
+--//
+--//	ServerAdminPrint(client, "Player Mutes:")
+--//	for _, player in pairs(TGNS.GetPlayerList()) do
+--//		playerNames[player:GetClientIndex()] = player:GetName()
+--//	end
+--//	for _, player in pairs(TGNS.GetPlayerList()) do
+--//		for clientIndex, name in pairs(playerNames) do
+--//			if player:GetClientMuted(clientIndex) then
+--//				ServerAdminPrint(client, player:GetName() .. " : " .. name)
+--//			end
+--//		end
+--//	end
+--//end
+--//TGNS.RegisterCommandHook("Console_sv_mutes", ListMutes, help)
 
 local Plugin = {}
 

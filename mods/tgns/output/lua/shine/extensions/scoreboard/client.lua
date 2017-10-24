@@ -1279,7 +1279,7 @@ function Plugin:Initialise()
 			if Client.GetScreenHeight() >= 1080 then
 				local numAliens = 0
 				local allPlayers = ScoreboardUI_GetAllScores()
-			    // How many items per player.
+--			    // How many items per player.
 			    for i = 1, #allPlayers do
 			        if allPlayers[i].EntityTeamNumber == kAlienTeamType then
 			        	numAliens = numAliens + 1

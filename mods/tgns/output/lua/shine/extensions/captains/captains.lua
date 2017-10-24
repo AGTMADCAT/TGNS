@@ -1086,7 +1086,7 @@ if Server or Client then
 		local highVolumeMessagesLastShownTime
 		local bannerDisplayed
 		local showRemainingTimer
-		//local lastOptInAttemptWhen = {}
+--		//local lastOptInAttemptWhen = {}
 		local OPT_IN_THROTTLE_IN_SECONDS = 3
 		local allPlayersWereArtificiallyForcedToReadyRoom
 		local setSpawnsSummaryText
@@ -1361,7 +1361,7 @@ if Server or Client then
 			whenToAllowTeamJoins = TGNS.GetSecondsSinceMapLoaded() + 10
 			votesAllowedUntil = nil
 			TGNS.ScheduleAction(1, showPickables)
-			//Shine.Plugins.afkkick.Config.KickTime = 20
+--			//Shine.Plugins.afkkick.Config.KickTime = 20
 			TGNS.DoFor(TGNS.GetClientList(), function(c)
 				Shine.ScreenText.End(93, c)
 				Shine.ScreenText.End(94, c)
@@ -1507,13 +1507,13 @@ if Server or Client then
 		local function addReadyPlayerClient(client)
 			if votesAllowedUntil == nil then
 				votesAllowedUntil = TGNS.GetSecondsSinceMapLoaded() + OPTIN_VOTE_DURATION + 2
-				// TGNS.DoFor(readyPlayerClients, function(c)
-				// 	if Shine:IsValidClient(c) then
-				// 		if not captainsModeEnabled then
-				// 			md:ToPlayerNotifyInfo(TGNS.GetPlayer(c), "You are now opted-in to play a Captains game.")
-				// 		end
-				// 	end
-				// end)
+--				// TGNS.DoFor(readyPlayerClients, function(c)
+--				// 	if Shine:IsValidClient(c) then
+--				// 		if not captainsModeEnabled then
+--				// 			md:ToPlayerNotifyInfo(TGNS.GetPlayer(c), "You are now opted-in to play a Captains game.")
+--				// 		end
+--				// 	end
+--				// end)
 				TGNS.ScheduleAction(1, announceTimeRemaining)
 			elseif votesAllowedUntil == math.huge and not infiniteTimeRemainingDisplayStarted then
 				infiniteTimeRemainingDisplayStarted = true
@@ -1585,21 +1585,21 @@ if Server or Client then
 			updateCaptainsReadyProgress(client)
 		end
 
-		//function swapTeamsAfterDelay(delayInSeconds)
-		//	local originalPlayerTeamNumbers = {}
-		//	TGNS.DoFor(TGNS.GetPlayerList(), function(p)
-		//		if TGNS.PlayerIsOnPlayingTeam(p) then
-		//			originalPlayerTeamNumbers[p] = TGNS.GetPlayerTeamNumber(p)
-		//		end
-		//	end)
-		//	TGNS.ScheduleAction(delayInSeconds, function()
-		//		TGNS.DoForPairs(originalPlayerTeamNumbers, function(player, teamNumber)
-		//			local otherTeamNumber = teamNumber == 1 and 2 or 1
-		//			TGNS.SendToTeam(player, otherTeamNumber, true)
-		//		end)
-		//		md:ToAllNotifyInfo("Teams have been swapped!")
-		//	end)
-		//end
+--		//function swapTeamsAfterDelay(delayInSeconds)
+--		//	local originalPlayerTeamNumbers = {}
+--		//	TGNS.DoFor(TGNS.GetPlayerList(), function(p)
+--		//		if TGNS.PlayerIsOnPlayingTeam(p) then
+--		//			originalPlayerTeamNumbers[p] = TGNS.GetPlayerTeamNumber(p)
+--		//		end
+--		//	end)
+--		//	TGNS.ScheduleAction(delayInSeconds, function()
+--		//		TGNS.DoForPairs(originalPlayerTeamNumbers, function(player, teamNumber)
+--		//			local otherTeamNumber = teamNumber == 1 and 2 or 1
+--		//			TGNS.SendToTeam(player, otherTeamNumber, true)
+--		//		end)
+--		//		md:ToAllNotifyInfo("Teams have been swapped!")
+--		//	end)
+--		//end
 
 		function getCaptainsGameStateDescription()
 			local result = ""
@@ -2030,8 +2030,8 @@ if Server or Client then
 					end
 				end
 
-				// if TGNS.GetSecondsSinceMapLoaded() - (lastOptInAttemptWhen[client] or 0) < OPT_IN_THROTTLE_IN_SECONDS then
-				// 	md:ToPlayerNotifyError(player, string.format("Every opt-in attempt (including this one) resets a %s-second cooldown.", OPT_IN_THROTTLE_IN_SECONDS))
+--				// if TGNS.GetSecondsSinceMapLoaded() - (lastOptInAttemptWhen[client] or 0) < OPT_IN_THROTTLE_IN_SECONDS then
+--				// 	md:ToPlayerNotifyError(player, string.format("Every opt-in attempt (including this one) resets a %s-second cooldown.", OPT_IN_THROTTLE_IN_SECONDS))
 				if TGNS.IsPlayerSpectator(player) then
 					md:ToPlayerNotifyError(player, "You may not use this command as a spectator.")
 				elseif (not rolandHasBeenUsed) and (not TGNS.PlayerIsOnPlayingTeam(player)) and not captainsModeEnabled then
@@ -2065,17 +2065,17 @@ if Server or Client then
 						end
 					end
 				end
-				// lastOptInAttemptWhen[client] = TGNS.GetSecondsSinceMapLoaded()
-				// if not TGNS.IsClientAdmin(client) and not TGNS.Has(readyPlayerClients, client) then
-				// 	TGNS.ScheduleAction(3.5, function()
-				// 		if Shine:IsValidClient(client) then
-				// 			TGNS.AddTempGroup(client, "iwantcaptainscommand_group")
-				// 			md:ToPlayerNotifyInfo(TGNS.GetPlayer(client), "... sh_iwantcaptains restored.")
-				// 		end
-				// 	end)
-				// 	TGNS.RemoveTempGroup(client, "iwantcaptainscommand_group")
-				// 	md:ToPlayerNotifyInfo(player, "sh_iwantcaptains 4-second cooldown started...")
-				// end
+--				// lastOptInAttemptWhen[client] = TGNS.GetSecondsSinceMapLoaded()
+--				// if not TGNS.IsClientAdmin(client) and not TGNS.Has(readyPlayerClients, client) then
+--				// 	TGNS.ScheduleAction(3.5, function()
+--				// 		if Shine:IsValidClient(client) then
+--				// 			TGNS.AddTempGroup(client, "iwantcaptainscommand_group")
+--				// 			md:ToPlayerNotifyInfo(TGNS.GetPlayer(client), "... sh_iwantcaptains restored.")
+--				// 		end
+--				// 	end)
+--				// 	TGNS.RemoveTempGroup(client, "iwantcaptainscommand_group")
+--				// 	md:ToPlayerNotifyInfo(player, "sh_iwantcaptains 4-second cooldown started...")
+--				// end
 			end)
 			wantCaptainsCommand:Help(string.format("Tell the server you want to play a Captains Game (cooldown: %s seconds).", OPT_IN_THROTTLE_IN_SECONDS))
 

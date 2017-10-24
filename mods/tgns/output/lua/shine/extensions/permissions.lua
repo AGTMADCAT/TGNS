@@ -81,16 +81,16 @@ function Plugin:Initialise()
     return true
 end
 
-/*function Plugin:IsSteamIdInGroup(steamId, groupName)
-	local result = false
-	TGNS.DoForPairs(dakData.users, function(userKey, userData)
-		if userData.id == steamId and TGNS.Any(userData.groups, function(x) return x == groupName end) then
-			result = true
-		end
-		return result
-	end)
-	return result
-end*/
+--/*function Plugin:IsSteamIdInGroup(steamId, groupName)
+--	local result = false
+--	TGNS.DoForPairs(dakData.users, function(userKey, userData)
+--		if userData.id == steamId and TGNS.Any(userData.groups, function(x) return x == groupName end) then
+--			result = true
+--		end
+--		return result
+--	end)
+--	return result
+--end*/
 
 -- Fix start - Fix with cache
 function Plugin:IsSteamIdInGroup(steamId, groupName)
