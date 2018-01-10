@@ -4,7 +4,7 @@ TGNS
 Welcome to the [TGNS open-source mods repository][repoannouncethread]. TGNS is [TacticalGamer.com][tg]'s well-known Natural Selection community. This repository houses most of the mods they use on their NS2 server, many of which are built atop Person8880's [Shine Admin Mod][shine].
 
 Some of the more unique customizations on [the TGNS game server][tgns] include:
-  
+
 __Captains__: Start a Captains Game, like a pickup game/gather/dodgeball, wherein teams are picked one at a time by appointed team captains
 
 __WinOrLose__: The losing team can put down their weapons to force a must-end-the-game timer on the winning team
@@ -26,24 +26,28 @@ Other offerings include: Admin Chat, distributing rookies to both teams during t
 
 # Development Setup
 - Clone this repo to your machine
-- Create a shortcut to the NS2.exe. it probably lives somewhere similar to this path: 
+- Create a shortcut to the NS2.exe. it probably lives somewhere similar to this path:
 `C:\Program Files (x86)\Steam\steamapps\common\Natural Selection 2\NS2.exe`
 - I suggest renaming this shortcut to `dev` or whatever makes sense to you
-- Goto the properties for this shortcut, on the `shortcut` tab add the following to 
+- Goto the properties for this shortcut, on the `shortcut` tab add the following to
 the `target` field: `-game "C:\Users\your_name\development\TGNS\mods\tgns\output" -debug`.
-The new path you are adding here is to the `\mods\tgns\output` folder inside the repo. 
-The target should look something like this when finished: 
+The new path you are adding here is to the `\mods\tgns\output` folder inside the repo.
+The target should look something like this when finished:
 `"C:\Program Files (x86)\Steam\steamapps\common\Natural Selection 2\NS2.exe" -game "C:\Users\your_name\development\TGNS\mods\tgns\output" -debug`.
 - Add config files to: `"C:\Users\your_name\AppData\Roaming\Natural Selection 2"`.
+Much of the TGNS mod works in conjunction with the Shine Administration Mod. Configuring the shine mod
+will be done in here as well.
 Additionally this is where log files get outputted to, I suggest creating a shortcut
 to here as well as it can be helpful to edit the config files or view the logs out of the client.
 
 Use this shortcut while developing and then you can still play ns2 by launching through steam.
 The `-game` flag tells NS2 to use the files in the mod directory first, it will fall back to
-the ns2 root directory if they don't exist. The `-debug` flag adds additional messaging in the 
+the ns2 root directory if they don't exist. The `-debug` flag adds additional messaging in the
 console and is helpful while developing.
 
-Add other mods by using the `mods` menu in the NS2 client.
+Add other mods by using the `mods` menu in the NS2 client. As mentioned before, this mod works
+closely with Shine and requires it. Before you start a map locally to test you need to
+enable the Shine mod. From the main menu in the NS2 client, click `mods` and enable `Shine Administration`.
 
 ## Useful commands
 The following commands are helpful while developing
@@ -54,7 +58,7 @@ The following commands are helpful while developing
 
 The following require cheats to be enabled
 
-- `sv_cheats 1`: Enables cheats 
+- `sv_cheats 1`: Enables cheats
 - `pres 100`: Sets personal res to 100
 - `tres 100`: Sets team res to 100
 - `<lifeform>`: Will immediately change you to that lifeform e.g. `gorge`
